@@ -1,0 +1,23 @@
+%h1 Listing obligations
+
+%table
+  %thead
+    %tr
+      %th State
+      %th Template
+      %th
+      %th
+      %th
+
+  %tbody
+    - @obligations.each do |obligation|
+      %tr
+        %td= obligation.state
+        %td= obligation.template
+        %td= link_to 'Show', obligation
+        %td= link_to 'Edit', edit_obligation_path(obligation)
+        %td= link_to 'Destroy', obligation, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Obligation', new_obligation_path

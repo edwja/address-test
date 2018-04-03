@@ -1,0 +1,16 @@
+= form_for @obligation do |f|
+  - if @obligation.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@obligation.errors.count, "error")} prohibited this obligation from being saved:"
+      %ul
+        - @obligation.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :state
+    = f.text_field :state
+  .field
+    = f.label :template
+    = f.text_field :template
+  .actions
+    = f.submit 'Save'

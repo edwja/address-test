@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%p
+  %b Description:
+  = @template.description
+
+%p
+  %b Address:
+  - if @template.address.present?
+    = render partial: @template.address
+  - else
+    N/A
+
+= link_to 'Edit', edit_template_path(@template)
+\|
+= link_to 'Back', templates_path

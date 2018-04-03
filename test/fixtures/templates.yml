@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+butcher:
+  description: Butcher License
+  obligee: iowa
+
+liquor:
+  description: Liquor License
+  obligee: iowa

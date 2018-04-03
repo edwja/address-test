@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b State:
+  = @obligation.state
+%p
+  %b Template:
+  = @obligation.template
+
+= link_to 'Edit', edit_obligation_path(@obligation)
+\|
+= link_to 'Back', obligations_path

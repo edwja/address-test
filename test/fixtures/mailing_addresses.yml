@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+city:
+  name: City of Des Moines
+  addr1: 123 Rober Ray Drive
+  csz: Des Moines IA 50309
+  mailing_addressable: butcher (Template)
+
+state:
+  name: State of Iowa
+  addr1: 3030 Walnut
+  csz: Des Moines IA 50318
+  mailing_addressable: iowa (Obligee)
