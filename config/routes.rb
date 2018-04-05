@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :mailing_addresses, only: [:new, :create, :edit, :show]
+  resources :mailing_addresses, only: [:create, :update]
 
   resources :obligations
 

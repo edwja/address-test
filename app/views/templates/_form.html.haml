@@ -12,12 +12,13 @@
   .actions
     = f.submit 'Save'
 
-- if @template.address.present?
-  Address:
-  %br
-  = render partial: @template.address
-  = link_to 'Update', edit_template_address_path(@template)
-- else
-  = link_to 'New', new_template_address_path(@template)
+- if @template.persisted?
+  - if @template.mailing_address.present?
+    MailingAddress:
+    %br
+    = render partial: @template.mailing_address
+    = link_to 'Update', edit_template_mailing_address_path(@template)
+  - else
+    = link_to 'New', new_template_mailing_address_path(@template)
 
 %p

@@ -4,5 +4,4 @@ class Obligation < ApplicationRecord
   belongs_to :template
 
   delegate_empty_mailing_address_to :template
-
 end

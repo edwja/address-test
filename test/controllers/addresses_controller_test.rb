@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AddressesControllerTest < ActionDispatch::IntegrationTest
+class MailingAddressesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @address = addresses(:one)
   end
@@ -16,11 +16,11 @@ class AddressesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create address" do
-    assert_difference('Address.count') do
+    assert_difference('MailingAddress.count') do
       post addresses_url, params: { address: {  } }
     end
 
-    assert_redirected_to address_url(Address.last)
+    assert_redirected_to address_url(MailingAddress.last)
   end
 
   test "should show address" do
@@ -39,7 +39,7 @@ class AddressesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy address" do
-    assert_difference('Address.count', -1) do
+    assert_difference('MailingAddress.count', -1) do
       delete address_url(@address)
     end
 

@@ -1,7 +1,6 @@
 module MailingAddressable
   extend ActiveSupport::Concern
 
-
   included do
     has_one :mailing_address, as: :mailing_addressable
   end
@@ -9,14 +8,14 @@ module MailingAddressable
   def mailing_address
     address = super
     if address.nil? && !self.class.fallback.nil?
-      parent = self.send(self.class.fallback)
-      address = parent&.mailing_address
+      associate = self.send(self.class.fallback)
+      address = associate&.mailing_address
     end
     address
   end
 
   def mailing_address_source
-    self.mailing_address&.mailing_addressable
+    self.mailing_address&.addressable
   end
 
   class_methods do

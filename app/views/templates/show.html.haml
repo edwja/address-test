@@ -5,9 +5,9 @@
   = @template.description
 
 %p
-  %b Address:
-  - if @template.address.present?
-    = render partial: @template.address
+  %b MailingAddress:
+  - if @template.mailing_address.present?
+    = render partial: @template.mailing_address
   - else
     N/A
 

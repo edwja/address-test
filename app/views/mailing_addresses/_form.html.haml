@@ -19,10 +19,10 @@
     = f.text_field :csz
 
   .field
-    = f.label :addressable
-    = f.text_field :addressable_type, disable: true
+    = f.label :mailing_addressable
+    = f.text_field :mailing_addressable_type, disable: true
 
-    = f.hidden_field :addressable_id
+    = f.hidden_field :mailing_addressable_id
 
   .actions
     = f.submit 'Save'

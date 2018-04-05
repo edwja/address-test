@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Address::TemplatesControllerTest < ActionDispatch::IntegrationTest
+class MailingAddress::TemplatesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
