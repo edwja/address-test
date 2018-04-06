@@ -1,6 +1,5 @@
 class MailingAddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :destroy]
-  before_action :check_cancel, only: [:create, :update]
 
   def index
     @addresses = MailingAddress.all
@@ -61,13 +60,6 @@ class MailingAddressesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
       params.require(:mailing_address).permit(:name, :addr1, :csz, :mailing_addressable_id, :mailing_addressable_type)
-    end
-
-    def check_cancel
-      if params[:commit] == 'Cancel'
-        @addressable = MailingAddress.new(address_params).mailing_addressable
-        redirect_to edit_polymorphic_path(@addressable)
-      end
     end
 
 end
